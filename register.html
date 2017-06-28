@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--用户未登录状态下的头部-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>用户注册_52buff游戏服务网</title>
+    <meta name="keywords" content="游戏交易，游戏币交易，游戏装备交易，游戏账号交易，手机游戏交易，代练服务，游戏陪玩">
+    <meta name="description" content="52buff游戏服务网，专业游戏交易服务平台，提供网络游戏币交易、游戏装备交易、游戏帐号交易、点卡交易、激活码交易、游戏材料交易以及专业的代练服务，是国内最服务最好、最贴心、最安全的网络游戏交易平台，更简单交易，更轻松游戏">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="./static/css/user/style.css"/>
+    <link rel="stylesheet" href="./static/css/user/commen_order.css"/>
+    <link rel="stylesheet" href="./static/css/user/buy_order.css"/>
+    <script src="./static/js/jquery-3.1.1.min.js"></script>
+    <script src="static/js/jquery.md5.js"></script>
+    <script src="./static/js/common.js"></script>
+    <script src="./static/js/register/register.js"></script>
+    <script src="./static/js/my_buy.js"></script>
+    <script src="./static/layer/layer.js"></script>
+    <style>
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;//关于解决输入框背景颜色
+        -webkit-text-fill-color: rgba(255,255,255,1)!important;//关于接输入框文字颜色
+        }
+    </style>
+</head>
+<body>
+<div class="container bgWrap sign">
+    <div id="navWrap">
+    <div id="nav" class="wrap signUp">
+        <a class="logo2 fir" href="http://www.52buff.com/"></a>
+        <div class="logo_wri ">欢迎注册</div>
+        <!--<div class="logo-title"> |&nbsp;欢迎注册</div>-->
+        <div class="nav2">
+            <a href="http://www.52buff.com/">返回首页</a><a href="http://www.52buff.com/help/index.html">帮助中心</a>
+        </div>
+    </div>
+</div>
+    <div id="signUpWrap" class="welcome">
+        <div class="logoWrap">
+            <div class="formBgWrap">
+                <div class="form" style="height: 440px; margin-top: 90px">
+                    <form class="signUp" action="" method="post" autocomplete="off">
+                        <div class="title"><em>用户注册</em></div>
+                        <span class="errMsg" style="color: red;"></span><!--服务器返回的错误信息-->
+                        <div class="ipt phone">
+                            <i class="icon_phone"></i>
+                            <input type="text" name="mobile" placeholder="手机号" class="G_ipt text" id="mob">
+                            <span class="span tishi_mob">请输入手机号</span>
+                            <span class="error_mob"><i></i>手机号格式有误</span>
+                            <span class="true_mob"><i></i>手机号不能为空</span>
+                        </div>
+                        <div class="ipt password">
+                            <i class="icon_password"></i>
+                            <input type="password" name="pwd" placeholder="密码" class="G_ipt  pwFirst text" id="pass">
+                            <span class="span tishi_pass">密码由6到18位的数字,字母或特殊字符组成</span>
+                            <span class="error_pass"><i></i>密码由6到18位的数字,字母或特殊字符组成</span>
+                            <span class="true_pass"><i></i>密码不能为空</span>
+                        </div>
+                        <div class="ipt checkPassword">
+                            <i class="icon_password"></i>
+                            <input type="password" name="pwd" placeholder="确认密码" class="G_ipt  pwFirst text" id="confirm">
+                            <span class="span tishi_pass">请再次输入密码</span>
+                            <span class="error_pass"><i></i>两次输入的密码不一致</span>
+                            <span class="true_pass"><i></i>请确认密码</span>
+                        </div>
+                        <div class="verify" style="margin-bottom: 30px;display: none">
+                            <input type="text" name="code" placeholder="验证码" class="G_ipt code_bg" id="code" style="width:120px;">
+                            <span class="img_1"><img  id="captcha" title="看不清楚点击刷新" src="http://user.9891.com/captcha.html" style="width: 120px"></span>
+                            <span class="tishi_codes " style="display: none">请输入验证码</span>
+                            <span class="true_codes " style="display: none"><i></i>验证码不能为空</span>
+                        </div>
+                        <div class="note">
+                            <input style="width: 139px;" type="text" name="mobileCode" placeholder="手机验证码" id="mobileCode" class="G_ipt phone_bg">
+                            <input type="button" class="orgBtn getMobileCode" value="获取验证码" onclick="clickButton()"/>
+                            <span class="span tishi_mobileCode">请输入验证码</span>
+                            <span class="true_mobileCode"><i></i>验证码不能为空</span>
+                        </div>
+                        <div class="txt">
+                            <span class="selected"><i class="font-img" style="margin-left: 0px;display: none"></i><i class="wh" style="margin-left: 0px;"></i>我已经阅读并同意<a target="_blank" href="http://www.52buff.com/help/detail/id/9.html" style="color: #4580D3">《52buff服务协议》</a></span>
+                            <input type="hidden" name="deal" value="true"></div>
+                        <div class="btnWrap">
+                            <div class="btn orgBtn regBtn">免费注册</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--登录注册等简单页面foot-->
+<div id="foot">
+    <div class="nav">
+        <a target="_blank" href="http://www.52buff.com/about/index.html">&nbsp;关于我们&nbsp;</a>|
+        <a target="_blank" href="http://www.52buff.com/about/index.html#a6">&nbsp;联系我们&nbsp;</a>|
+        <a target="_blank" href="http://www.52buff.com/about/index.html#a3">&nbsp;人才招聘&nbsp;</a>|
+        <a target="_blank" href="http://www.52buff.com/help/index.html">&nbsp;帮助中心&nbsp;</a>
+    </div>
+    <p>版权：Copyright &copy; 52buff游戏服务网 备案号：豫ICP备17016426号-1 网络文化经营许可证：&nbsp; 豫网文[2017]3486-067号&nbsp; 联系邮箱：52buff@52buff.com<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000416902'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/z_stat.php%3Fid%3D1000416902%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></p>
+</div>
+
+</div>
+<script>
+    var salt = "",
+        host = "http://login.52buff.com",
+        api = {
+            register: host + '/passport/login/register',        //注册接口
+            verifyUser: host + '/passport/login/verifyUser',    //验证用户是否存在
+            getPhoneCode: host + '/passport/login/getPhoneCode' //获取手机验证码接口
+        };
+    $(function(){
+        $("#mob").focus(function(){
+            $(this).siblings('.icon_phone').addClass('icon_phone_focus');
+        })
+        $("#mob").blur(function(){
+            $(this).siblings('.icon_phone').removeClass('icon_phone_focus');
+        })
+        $("#pass").focus(function(){
+            $(this).siblings('.icon_password').addClass('icon_password_focus');
+        })
+        $("#pass").blur(function(){
+            $(this).siblings('.icon_password').removeClass('icon_password_focus');
+        })
+    })
+</script>
+</body>
+</html>
