@@ -78,7 +78,7 @@ $(function() {
             $('.area').css('border-bottom', '');
             $('.server').css('border-bottom', '');
             $('.goods').css('border-bottom', '');
-            $('.area').css('border-left-color', '#ff4747');
+            $('.area').css('border-left-color', '#4CB9E7');
             $('.server').css('border-left-color', '#efecec');
             $('.goods').css('border-left-color', '#efecec');
             $('.game-hot').children('.icon_down').addClass('cast_start');
@@ -114,8 +114,8 @@ $(function() {
             $('.game-hot').css('border-bottom', '');
             $('.server').css('border-bottom', '');
             $('.goods').css('border-bottom', '');
-            $('.area').css('border-left-color', '#ff4747');
-            $('.server').css('border-left-color', '#ff4747');
+            $('.area').css('border-left-color', '#4CB9E7');
+            $('.server').css('border-left-color', '#4CB9E7');
             $('.goods').css('border-left-color', '#efecec');
             $('.area').children('.icon_down').addClass('cast_start');
             $('.area').children('.icon_down').removeClass('end_start');
@@ -148,8 +148,8 @@ $(function() {
             $('.goods').css('border-bottom', '');
             $('.area').css('border-bottom', '');
             $('.game-hot').css('border-bottom', '');
-            $('.goods').css('border-left-color', '#ff4747');
-            $('.server').css('border-left-color', '#ff4747');
+            $('.goods').css('border-left-color', '#4CB9E7');
+            $('.server').css('border-left-color', '#4CB9E7');
             $('.area').css('border-left-color', '#efecec');
 
             $('.server').children('.icon_down').addClass('cast_start');
@@ -185,7 +185,7 @@ $(function() {
             $('.area').css('border-bottom', '');
             $('.server').css('border-bottom', '');
             $('.game-hot').css('border-bottom', '');
-            $('.goods').css('border-left-color', '#ff4747');
+            $('.goods').css('border-left-color', '#4CB9E7');
             $('.area').css('border-left-color', '#efecec');
             $('.server').css('border-left-color', '#efecec');
 
@@ -214,7 +214,7 @@ $(function() {
     $('.first').on('click', '.li_game', function () {
 
 //					样式
-        $(this).css('color', '#ff4747');
+        $(this).css('color', '#4CB9E7');
         $(this).siblings().css('color', '#333');
         $(this).parent().css('display', 'none');
         $('.area_name').remove();
@@ -240,8 +240,8 @@ $(function() {
 
         $('.game-hot').css('border-bottom', '');
         $('.area').css('border-bottom', '4px solid #fff');
-        $('.area').css('border-left-color', '#ff4747');
-        $('.server').css('border-left-color', '#ff4747');
+        $('.area').css('border-left-color', '#4CB9E7');
+        $('.server').css('border-left-color', '#4CB9E7');
         $('.goods').css('border-left-color', '#ffecec');
         $('.second').children().remove();
         gid = $(this).attr('id');
@@ -277,7 +277,7 @@ $(function() {
         $('.game_typer').html('选择服务器');
         $('.area').css('border-bottom', '');
         $('.server').css('border-bottom', '4px solid #fff');
-        $(this).css('color', '#ff4747');
+        $(this).css('color', '#4CB9E7');
         $(this).siblings().css('color', '#333');
         $('.area').children('.icon_down').addClass('end_start');
         $('.area').children('.icon_down').removeClass('cast_start');
@@ -286,8 +286,8 @@ $(function() {
         $('.server').children('.icon_down').addClass('cast_start');
         $('.server').children('.icon_down').removeClass('end_start');
 
-        $('.goods').css('border-left-color', '#ff4747');
-        $('.server').css('border-left-color', '#ff4747');
+        $('.goods').css('border-left-color', '#4CB9E7');
+        $('.server').css('border-left-color', '#4CB9E7');
         $('.area').css('border-left-color', '#ffecec');
 
         $('.tree').children().remove();
@@ -322,7 +322,7 @@ $(function() {
         $('.server').css('border-bottom', '');
         $('.goods').css('border-bottom', '4px solid #fff');
 
-        $('.goods').css('border-left-color', '#ff4747');
+        $('.goods').css('border-left-color', '#4CB9E7');
         $('.server').css('border-left-color', '#ffecec');
         $('.area').css('border-left-color', '#ffecec');
         sid = $(this).attr('id');
@@ -367,7 +367,7 @@ $(function() {
         $('.main_con_4').hide();
 
         $('.goods').css('border-bottom', '2px solid #ff4747');
-        $(this).css('color', '#ff4747');
+        $(this).css('color', '#4CB9E7');
         $(this).siblings().css('color', '#333');
         var goods_type_id = $(this).attr('id');
         $('#goods_type_id').val(goods_type_id);

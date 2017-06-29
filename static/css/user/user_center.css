@@ -1,0 +1,243 @@
+
+/*右侧内容*/
+
+.account {
+	width: 100%;
+	background: #F0F0F0;
+	border-bottom: 1px solid #ececec;
+}
+
+.account_box {
+	float: left;
+	width: 244px;
+	height: 150px;
+	background: #fff;
+	border-left: 1px solid #ececec;
+	padding-top: 10px;
+	padding-bottom: 12px;
+}
+.account_box:first-child {
+	border-left: 0;
+}
+
+.account_title {
+	color: #333;
+	margin-left: 20px;
+	margin-top: 15px;
+}
+
+.icon_money {
+	display: inline-block;
+	padding: 15px;
+	background: #ff4747;
+	margin: 0 5px;
+	vertical-align: middle;
+}
+
+.icon_jindou {
+	background: url(http://www.52buff.com) no-repeat -110px -23px;
+}
+
+.icon_yue {
+	background: url(http://www.52buff.com) no-repeat -110px -86px;
+}
+
+.icon_yajin {
+	background: url(http://www.52buff.com) no-repeat -110px -149px;
+}
+
+.icon_jifen {
+	background: url(http://www.52buff.com) no-repeat -110px -211px;
+}
+.grey_wenhao{
+	padding: 10px;
+	background: #ff4747;
+	vertical-align: middle;
+	background: url(http://www.52buff.com) no-repeat 0px 0px;
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	float: right;
+	margin-right: 10px;
+}
+.yiwen2{
+	width: 201px;
+	position: absolute;
+	top: 20px;
+	left: -175px;
+	text-align: left;
+	padding: 20px 5px 10px 10px;
+	box-sizing: border-box;
+	display: none;
+	background: url(http://www.52buff.com) no-repeat;
+	background-size: 100% 100%;
+	color: #666;
+	font-size: 14px;
+	min-height: 70px;
+	cursor: auto;
+}
+.grey_wenhao:hover .yiwen2{
+	display: block;
+}
+.money {
+	font-size: 24px;
+	color: #ff8a05;
+	margin-left: 32px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.money span {
+	font-size: 12px;
+}
+
+.recharge,
+.detail {
+	display: inline-block;
+	padding: 5px 12px;
+	border: 1px solid #ff4747;
+	border-radius: 20px;
+	font-size: 12px;
+	color: #ff4747;
+	cursor: pointer;
+}
+
+.recharge {
+	margin-left: 32px;
+}
+
+.detail {
+	margin-left: 10px;
+}
+
+.recharge:hover {
+	background: #ff4747;
+	color: #fff;
+}
+
+.detail:hover {
+	background: #ff4747;
+	color: #fff;
+}
+
+.save {
+	width: 100%;
+	background: #fff;
+}
+
+.save_title {
+	margin-top: 10px;
+	text-indent: 20px;
+	color: #333;
+	height: 60px;
+	line-height: 60px;
+}
+
+.save_grade {
+	background: #FFF5EF;
+	height: 60px;
+	line-height: 60px;
+	color: #999;
+	font-size: 12px;
+	text-indent: 20px;
+}
+
+.wrap {
+	display: inline-block;
+	width: 360px;
+	height: 10px;
+	background: #E3E4E5;
+	border-radius: 20px;
+	vertical-align: middle;
+	position: relative;
+	margin-left: 8px;
+}
+
+.progress {
+	width: 40%;
+	height: 10px;
+	background: #6FCA01;
+	border-radius: 20px;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.num {
+	margin-left: 13px;
+	margin-right: 40px;
+	color: #4B4A49;
+}
+
+.renzheng {
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	color: #333;
+	font-size: 18px;
+	text-indent: 20px;
+}
+
+.renzheng div {
+	float: left;
+}
+
+.icon_renzheng {
+	display: inline-block;
+	padding: 12px;
+	background: #ff4747;
+	vertical-align: middle;
+	margin-left: 86px;
+}
+
+.icon_no {
+	background: url(http://www.52buff.com) no-repeat -172px -63px;
+}
+
+.icon_yes {
+	background: url(http://www.52buff.com) no-repeat -172px -101px;
+}
+
+.no_renzheng {
+	color: #ff4747;
+	font-size: 12px;
+}
+
+.yes_renzheng {
+	color: #50C163;
+	font-size: 12px;
+}
+
+.prompt {
+	color: #999;
+	font-size: 12px;
+	margin-left: 80px;
+}
+
+.btn {
+	float: right !important;
+	width: 82px;
+	height: 26px;
+	line-height: 26px;
+	border-radius: 50px;
+	margin-right: 20px;
+	font-size: 12px;
+	margin-top: 37px;
+	text-align: center;
+	text-indent: 0;
+}
+
+.unfinish {
+	background: #FF4949;
+	color: #fff;
+	cursor: pointer;
+}
+
+.change {
+	color: #ffffff;
+	border: 1px solid #58B7FF;
+	background: #58B7FF;
+	cursor: pointer;
+}
+

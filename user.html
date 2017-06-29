@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <!--meta部分-->
+    <title>个人中心_52buff游戏服务网</title>
+    <meta name="keywords" content="游戏交易，游戏币交易，游戏装备交易，游戏账号交易，手机游戏交易，代练服务，游戏陪玩">
+    <meta name="description"
+          content="52buff游戏服务网，专业游戏交易服务平台，提供网络游戏币交易、游戏装备交易、游戏帐号交易、点卡交易、激活码交易、游戏材料交易以及专业的代练服务，是国内最服务最好、最贴心、最安全的网络游戏交易平台，更简单交易，更轻松游戏">
+    <!--引入head里面常用css和js-->
+    <link rel="stylesheet" type="text/css" href="./static/css/user/common_grzx.css"/>
+    <script src="./static/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./static/js/user/common_grzx.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./static/js/common.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./static/js/user/api_config.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./static/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="./static/css/user/user_center.css"/>
+</head>
+<body>
+<div class="headers">
+    <div class="header-width">
+        <div class="header-left">
+            <div class="already-log">
+                <span>您好，<a href="#" style="color: #ff4747;font-weight: bold"></a> &nbsp;&nbsp;欢迎回来！</span>
+                <a href="/login/logout.html" style="margin-left: 10px" class="tuichu">安全退出</a>
+            </div>
+        </div>
+        <div class="header-right">
+            <a href="/index/index.html" style="color: #999;float: left;margin-right: 10px"
+               class="my_a"><span>我的52buff</span></a>
+            <ul class="help-center">
+                <li>
+                    <a href="/buyer_order/index.html"><i class="icon-top xing"></i> 买家中心</a>
+                    <i class="icon-top down"></i>
+                    <ul class="help buying" style="display:none;">
+                        <li>
+                            <a href="#">我要买</a>
+                        </li>
+                        <li>
+                            <a href="/buyer_order/index.html">已购买商品</a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+            <ul class="help-center">
+                <li>
+                    <a href="/seller_order/index.html"><i class="icon-top maijia"></i> 卖家中心</a>
+                    <i class="icon-top down"></i>
+                    <ul class="help selling" style="display:none;">
+                        <li>
+                            <a href="#">我要卖</a>
+                        </li>
+                        <li>
+                            <a href="/seller_order/index.html">订单管理</a>
+                        </li>
+                        <li>
+                            <a href="/seller_goods/index.html">商品管理</a>
+                        </li>
+                        <li>
+                            <a href="/fund/withdraw.html">我要提现</a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+            <ul class="help-center">
+                <li>
+                    <a target="_blank" href="#"><i class="icon-top serve"></i> 帮助中心</a></a>
+                    <i class="icon-top down"></i>
+                    <ul class="help" style="display:none;">
+                        <li>
+                            <a target="_blank" href="#">账户安全</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="#">买卖帮助</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="#">资金相关</a>
+                        </li>
+                        <li style="color:red;">
+                            <a target="_blank" href="#">问题反馈</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<!--头部-->
+<div class="header">
+    <div class="header_info">
+        <div class="logo">
+            <a href="#"><img src="./static/images/logo.png" height="52" alt="www.52buff.com" style="margin-top: -14px"></a>
+        </div>
+        <div class="logo_wri ">个人中心</div>
+        <div class="nav">
+            <ul>
+                <li>
+                    <a style="color: #fff;padding: 5px 20px;background-color: #58B7FF;"
+                       href="/index/index.html">个人中心</a>
+                </li>
+
+                <li>
+                    <a href="#">我要购买</a>
+                </li>
+                <li>
+                    <a href="#">我要出售</a>
+                </li>
+                <li>
+                    <a href="#">帮助中心</a>
+                </li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="banner">
+        <div class="content_info">
+            <div class="photo">
+                <img src="./static/images/avatar/avatar01.png" class="touxiang"/>
+                <a href="/index/avatar.html">
+                    <div class="change_photo">修改头像</div>
+                </a>
+            </div>
+            <span> <img src="http://static.52buff.com/user/center_icon.png"
+                        style="border: none;margin-right: 10px;margin-bottom: -6px"/></span>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="main_left">
+            <div class="person_msg">
+                <div class="phone">
+                    <span></span>
+                    <span class="state_bars" style="font-size: 12px">
+      <span>          <i class="green_line"></i>在线
+                </span>
+      <i class="downs"></i>
+      <div class="state_online">
+        <span>
+          <i class="green_line" data="1"></i>在线</span>
+        <span>
+          <i class="grey_line" data="0"></i>离线</span>
+      </div>
+    </span>
+                    <span>
+      <i class="wenhao">
+        <div class="yiwen">离线时，您出售中的商品将不再展示，无法被买家购买。</div>
+      </i>
+    </span>
+                    <div class="clear"></div>
+                </div>
+                <p style="margin: 15px 0;text-align: left;margin-left: 20px;font-size: 12px;color: #555">
+                    买家信誉：<a target="_blank" href="http://www.52buff.com/help/detail/id/17.html"><img
+                        src="http://static.52buff.com/credit/n-1-0.gif" title="新用户(0分)"
+                        style="cursor:pointer;vertical-align: middle;margin-top: -5px"/></a>
+                </p>
+                <p style="margin-bottom: 15px;text-align: left;margin-left: 20px;font-size: 12px;color: #555;">
+                    卖家信誉：<a target="_blank" href="http://www.52buff.com/help/detail/id/16.html"><img
+                        src="http://static.52buff.com/credit/n-1-0.gif" title="新用户(0分)"
+                        style="cursor:pointer;vertical-align: middle;margin-top: -5px"/></a>
+                </p>
+                <p class="last_login">上次登录：2017-06-28 14:32</p>
+
+            </div>
+            <script>
+                var _url_user_info = {
+                    'online_url': '/Index/setOnline.html'
+                };
+            </script>
+
+            <!-- 左侧菜单 -->
+            <div class="menu" id="user_menus">
+                <ul>
+                    <li>
+                        <p class="title" style="border-top: 0;">
+                            <i class="icon_menu icon_menu2"></i>买家中心<i class="icon_menu icon_jia  icon_right"></i>
+                        </p>
+                        <ul class="second_menu hidden">
+                            <li>
+                                <a href="/buyer_order/index.html">我购买的商品</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="title">
+                            <i class="icon_menu icon_menu3"></i>卖家中心<i class="icon_menu icon_jia icon_right"></i>
+                        </p>
+                        <ul class="second_menu hidden">
+                            <li>
+                                <a href="/seller_order/index.html">订单管理</a>
+                            </li>
+                            <li>
+                                <a href="/seller_goods/index.html">商品管理</a>
+                            </li>
+                            <li>
+                                <a href="/fund_yajin/gold.html">金牌卖家</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="title">
+                            <i class="icon_menu icon_menu4"></i>资金管理<i class="icon_menu icon_jia icon_right"></i>
+                        </p>
+                        <ul class="second_menu hidden">
+                            <li>
+                                <a href="/fund/fundlist.html">资金明细</a>
+                            </li>
+                            <li>
+                                <a href="/fund/withdraw.html">我要提现</a>
+                            </li>
+                            <li>
+                                <a href="/fund/withdrawlist.html">提现明细</a>
+                            </li>
+                            <li>
+                                <a href="/fund_yajin/recharge.html">押金交纳</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="title">
+                            <i class="icon_menu icon_menu6"></i>账户管理<i class="icon_menu icon_jia icon_right"></i>
+                        </p>
+                        <ul class="second_menu hidden">
+                            <li>
+                                <a href="#">登录密码</a>
+                            </li>
+
+                            <li>
+                                <a href="#">手机绑定</a>
+                            </li>
+                            <li>
+                                <a href="#">实名认证</a>
+                            </li>
+                            <li>
+                                <a href="#">角色管理</a>
+                            </li>
+                            <li>
+                                <a href="#">银行卡设置</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <script type="text/javascript" src="/static/user/js/menu.js"></script>
+        </div>
+
+        <div class="main_right">
+            <div class="account">
+                <div class="account_box">
+                    <div class="account_title"><i class="icon_money icon_yue"></i>可用余额
+                        <span class="grey_wenhao">
+                            <div class="yiwen2">卖家成功出售商品可获得，只可以用来提现。<p>
+                                <a target="_blank" href="#" style="float: right;margin-right: 10px;color: #0066cc">查看详情>></a></p></div></span>
+                    </div>
+                    <p class="money">0.00<span>元</span></p>
+                    <a href="#"><span class="recharge">提现</span></a>
+                    <a href="#"><span class="detail">明细</span></a>
+                </div>
+                <div class="account_box">
+                    <div class="account_title"><i class="icon_money icon_yajin"></i>账户押金
+                        <span class="grey_wenhao"><div class="yiwen2">发布无货赔付商品时需冻结押金，不同卖家信誉等级可交纳的押金上限不同。
+                    <p><a target="_blank" href="http://www.52buff.com/help/detail/id/22.html"
+                          style="float: right;margin-right: 10px;color: #0066cc">查看详情>></a></p></div></span>
+                    </div>
+                    <p class="money">0.00<span>元</span>
+                        <span style="color: #999;font-size: 12px;margin-right: 10px">锁定：<span
+                                style="color: #ff8a05;font-size: 14px;font-weight: bold">0</span><span
+                                style="color: #ff8a05">元</span></span></p>
+                    <a href="#"><span class="detail" style="margin-left: 30px">交纳</span></a>
+                    <a href="/fund/withdraw/type/3.html"><span class="detail">提现</span></a>
+                    <a href="/fund/fundlist/status/3.html"><span class="detail">明细</span></a>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="save">
+                <div class="save_title">
+                    安全等级
+                </div>
+                <div class="save_grade">
+                    您的安全等级
+                    <span class="wrap"><span class="progress" style="width:60%"></span></span><span
+                        class="num">60%</span>建议您尽快完成以下认证，以保障账号和资金安全。
+                </div>
+
+                <div class="renzheng">
+                    <div>登录密码</div>
+                    <div class="yes_renzheng"><i class="icon_renzheng icon_yes"></i>已设置</div>
+                    <div class="prompt">建议密码由6位以上数字、字母和特殊字符组成。</div>
+                    <a href="/safe/changepwd.html">
+                        <div class="btn change">修改</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <div class="renzheng">
+                    <div>手机绑定</div>
+                    <div class="yes_renzheng"><i class="icon_renzheng icon_yes"></i>已绑定</div>
+                    <div class="prompt">您绑定的手机号：150****3530</div>
+                    <a href="/safe/changemobile.html">
+                        <div class="btn change">修改</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <div class="renzheng">
+                    <div>实名认证</div>
+                    <div class="no_renzheng"><i class="icon_renzheng icon_no"></i>未认证</div>
+                    <div class="prompt">你还没完成实名认证！有效保障账户安全，提升您的信用度。</div>
+                    <a href="/safe/realname.html">
+                        <div class="btn unfinish">立即认证</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear">
+        </div>
+    </div>
+
+</div>
+<!--个人中心foot-->
+<div class="footer">
+    <div class="footer-lianjie">
+        <div class="footer-about">
+            <a target="_blank" href="#">&nbsp;关于我们&nbsp;</a>|
+            <a target="_blank" href="#">&nbsp;联系我们&nbsp;</a>|
+            <a target="_blank" href="#">&nbsp;人才招聘&nbsp;</a>|
+            <a target="_blank" href="#">&nbsp;帮助中心&nbsp;</a>
+            <p>Copyright © 52buff游戏币交易平台 网站备案号：粤ICP备17063268号-1(广州巴弗游信息科技有限公司)</p>
+        </div>
+    </div>
+    <div>
+
+        <!--返回顶部-->
+
+        <script>
+            $(function () {
+                $('.touxiang').addClass('photo_sty');
+            })
+        </script>
+</body>
+</html>

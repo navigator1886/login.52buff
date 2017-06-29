@@ -189,21 +189,21 @@ textarea { -webkit-appearance: none;}
 	margin-left: 12px;
 }
 .xing{
-	/*background: url(http://static.9891.com/icon/xing.png) no-repeat 0px 0px;*/
-	background: url('../img/icon/buyer.svg') no-repeat 0px 0px;
+	/*background: url(../icon/xing.png) no-repeat 0px 0px;*/
+	background: url('../images/icon/buyer.svg') no-repeat 0px 0px;
 }
 .maijia{
-	background: url('../img/icon/seller.svg') no-repeat center 0px;
+	background: url('../images/icon/seller.svg') no-repeat 0px 0px;
 }
 .serve{
-	background:  url('../img/icon/help.svg') no-repeat 0px 0px;
+	background:  url('../images/icon/help.svg') no-repeat 0px 0px;
 }
 .down{
 	margin-left: 0;
-	background:  url(http://static.9891.com/icon/icon_all2.png) no-repeat -129px -170px;
+	background:  url('../images/icon/down.png') no-repeat 0 0;
 }
 .rexian{
-	background:  url(http://static.9891.com/icon/icon_rexian.png) no-repeat 0px 0px;
+	background:  url(../icon/icon_rexian.png) no-repeat 0px 0px;
 	background-size: cover;
 }
 .header-right{
@@ -249,9 +249,6 @@ textarea { -webkit-appearance: none;}
 .help li:hover a{
 	color: #ff4747;
 }
-
-
-
 .tel{
 	color: red;
 	font-size: 16px;
@@ -281,7 +278,7 @@ textarea { -webkit-appearance: none;}
 	height: 38px;
 	float: right;
 	margin-top: 23px;
-	background: #ff4747;
+	background: #58B7FF;
 	position: relative;
 }
 .search_p{
@@ -298,9 +295,8 @@ textarea { -webkit-appearance: none;}
 	margin: 0 auto;
 	font-size: 14px;
 	z-index: 1000;
-	border: 2px solid #ff4747;
+	border: 2px solid #58B7FF;
 	box-sizing: border-box;
-	/*background: #ff4747;*/
 }
 
 .search_g li {
@@ -318,13 +314,13 @@ textarea { -webkit-appearance: none;}
 	display: inline-block;
 	width: 22px;
 	height: 22px;
-	background: url("http://static.9891.com/icon/icon_all2.png") -127px -171px no-repeat;
+	background: url("../icon/icon_all2.png") -127px -171px no-repeat;
 	float: right;
 	margin-top: 8px;
 }
 
 .search_g li:last-child {
-	background: #FF4747;
+	background: #58B7FF;
 	height: 100%;
 	width: 80px;
 	position: relative;
@@ -345,7 +341,7 @@ textarea { -webkit-appearance: none;}
 	color: #fff;
 	border: none;
 	outline: none;
-	background: #ff4747;
+	background: #58B7FF;
 	position: absolute;
 	top:-2px;
 	right:2px;
@@ -355,7 +351,7 @@ textarea { -webkit-appearance: none;}
 	display: inline-block;
 	width: 23px;
 	height: 23px;
-	background: url(http://static.9891.com/icon/search_white.png)  0px 1px no-repeat;
+	background: url(../icon/search_white.png)  0px 1px no-repeat;
 	vertical-align: middle;
 	margin-right: 6px;
 }
@@ -369,7 +365,7 @@ textarea { -webkit-appearance: none;}
 .main_con {
 	padding-top: 10px;
 	margin-left: 0px;
-	border:2px solid #ff4747;
+	border:2px solid #58B7FF;
 	border-top:none;
 	background: #ffffff;
 	box-sizing: border-box;
@@ -378,8 +374,6 @@ textarea { -webkit-appearance: none;}
 	top: 38px;
 	right: 0px;
 	z-index:1000;
-
-
 }
 
 .gamename_quicksearch {
@@ -402,7 +396,7 @@ textarea { -webkit-appearance: none;}
 	display: inline-block;
 	width: 21px;
 	height: 22px;
-	background:url(http://static.9891.com/icon/icon_all2.png) -18px -212px no-repeat ;
+	background:url(../icon/icon_all2.png) -18px -212px no-repeat ;
 	position: absolute;
 	left:227px;
 	top:10px;
@@ -418,7 +412,7 @@ textarea { -webkit-appearance: none;}
 	display: block;
 	width:30px;
 	height:30px;
-	background: url("http://static.9891.com/icon/icon_all2.png") -19px -251px no-repeat;
+	background: url("../icon/icon_all2.png") -19px -251px no-repeat;
 	position:absolute;
 	top:8px;
 	right:4px;
@@ -431,7 +425,7 @@ textarea { -webkit-appearance: none;}
 	display: inline-block;
 	text-align: center;
 	color: #999999;
-	border:1px solid #ff4747;
+	border:1px solid #58B7FF;
 	float:left;
 	text-decoration: none;
 	cursor: pointer;
@@ -447,7 +441,7 @@ a.shouyou{
 	margin-left: 15px;
 	background: #FFE4E4;
 	font-size: 14px;
-	color: #ff4747;
+	color: #58B7FF;
 }
 
 #tab111,#tab222{
@@ -482,7 +476,7 @@ a.shouyou{
 
 
 .main_letter_select a.current {
-	color:#ff4747;
+	color: #58B7FF;
 	border-bottom: #ff4747 2px solid;
 
 }
@@ -557,7 +551,7 @@ a.shouyou{
 /*内容部分*/
 .nav{
 	width: 1200px;
-	border-bottom: 2px solid #ff4747;
+	border-bottom: 2px solid #58B7FF;
 }
 .nav_info{
 	width: 1200px;
@@ -572,13 +566,11 @@ a.shouyou{
 }
 
 .nav ul li a{
-	/*width: 80px;*/
 	height: 35px;
 	line-height: 35px;
 	text-align: center;
 	font-size: 15px;
 	color: #151515;
-
 	display: block;
 	padding:0 25px;
 }
@@ -594,7 +586,7 @@ a.shouyou{
 	clear: both;
 }
 .nav li a:hover{
-	background: #FF4949;
+	background: #58B7FF;
 	color: #ffffff;
 }
 .nav .shouye{
@@ -691,7 +683,7 @@ a.shouyou{
 	/*margin-right: 2px;*/
 	cursor: pointer;
 	font-size: 14px;
-	background:#78C443 ;
+	background: #4CB9E7;
 	color: #fff;
 float: right;
 	margin-right: 3px;
@@ -911,7 +903,7 @@ li.select_op2{
 	height: 38px;
 	line-height: 38px;
 	text-align: center;
-	background: #FF4949;
+	background: #58B7FF;
 	color: #ffffff;
 	font-size: 16px;
 	border:0;
@@ -952,11 +944,11 @@ li.select_op2{
 }
 .tabbtn li.current a {
 	font-size: 14px ;
-	border-bottom:solid 2px #FF4949;
+	border-bottom:solid 2px #58B7FF;
 	height:28px;
 	line-height:28px;
 	background:#fff;
-	color:#FF4747 !important;
+	color: #58B7FF !important;
 	font-weight:800;
 	display: inline-block;
 }
@@ -997,7 +989,7 @@ li.select_op2{
 	width: 64px ;
 	height: 34px ;
 	line-height: 34px;
-	background: #FF4949;
+	background: #58B7FF;
 	border: 0px;
 	color: #FFFFFF;
 	cursor: pointer;
@@ -1032,26 +1024,16 @@ li.select_op2{
 	height: 40px;
 	border: 1px solid #ddd;
 }
-/*.news a:first-child>p>b.newer{*/
-	/*display: inline-block;*/
-	/*width:25px;*/
-	/*height:25px;*/
-	/*background:url("../img/user/icon_all_01.png") -12px -176px no-repeat;*/
-	/*vertical-align: middle;*/
-
-/*}*/
-/*热门游戏*/
 .game{
-	width: 100%;
+	width: 1200px;
 	background:#FFFFFF;
-	padding-bottom: 16px;
 	margin-top: -8px;
 }
 .game_info{
 	width: 1200px;
 	margin: 0 auto;
 	position: relative;
-	/*background: palevioletred;*/
+	background: lightgoldenrodyellow;
 
 }
 .game h2{
@@ -1085,29 +1067,25 @@ li.select_op2{
 	display: inline-block;
 }
 .game-cosplay{
-	background-image: url('http://static.9891.com/bg/gamebg_1.png');
+	background-image: url('../images/bg/gamebg_1.png');
 }
 .cosplay1{
-	background-image: url('http://static.9891.com/bg/gamebg_2.png')
+	background-image: url('../images/bg/gamebg_2.png')
 }
 .cosplay2{
-	background-image: url('http://static.9891.com/bg/gamebg_3.png')
+	background-image: url('../images/bg/gamebg_3.png')
 }
 .cosplay3{
-	background-image: url('http://static.9891.com/bg/gamebg_4.png')
+	background-image: url('../images/bg/gamebg_4.png')
 }
 .cosplay4{
-	background-image: url('http://static.9891.com/bg/gamebg_5.png')
+	background-image: url('../images/bg/gamebg_5.png')
 }
 .cosplay5{
-	background-image: url('http://static.9891.com/bg/gamebg_6.png')
+	background-image: url('../images/bg/gamebg_6.png')
 }
 .game-cosplay img{
-	/*-webkit-transition:all 1s;
-    -moz-transition:all 1s;
-    -o-transition:all 1s;
-    -ms-transition:all 1s; */
-height: 168px;
+	height: 168px;
 }
 .game-cosplay:hover .an-img-1{
 	animation:game 0.5s  ease-out;
@@ -1205,8 +1183,9 @@ height: 168px;
 	color: #999999;
 }
 .game-name button:hover{
-	border:1px solid #FF4949;
-	color: #FF4949;
+	background-color: #4CB9E7;
+	border:1px solid #4CB9E7;
+	color: #FFFFFF;
 }
 .game-name .btn3:hover{
 	border: 1px solid #dddddd;
@@ -1231,21 +1210,23 @@ height: 168px;
 	height: 308px;
 }
 .matter h2{
+	height: 36px;
+	line-height: 36px;
 	position: relative;
-	background:#F0F0F0;
+	background: #58B7FF;
 }
 .matter h2 span{
 	position: absolute;
+	color: #FFFFFF;
 	top: 0px;
 }
 .matter h2 img{
 	width: 32px;
 	height: 32px;
+	margin-left: 10px;
 	border-radius: 50%;
 	background: #e5e5e5;
 	position: absolute;
-	left: 0;
-	bottom: 10px;
 }
 .matter h2 a{
 	float: right;
@@ -1284,20 +1265,22 @@ height: 168px;
 
 }
 .deal h2{
+	height: 36px;
+	line-height: 36px;
 	position: relative;
+	background-color: #58B7FF;
 }
 .deal h2 img{
-	position: absolute;
-	left: 0;
-	bottom: 10px;
 	width: 32px;
 	height: 32px;
+	margin-left: 10px;
 	background-color: #e5e5e5;
 	border-radius: 50%;
 }
 .deal h2 span{
 	position: absolute;
-	top: -5px;
+	color: #FFFFFF;
+	top: 0;
 }
 .deal-deal{
 	width: 336px;
@@ -1308,7 +1291,6 @@ height: 168px;
 	width: 336px;
 	height: 435px;
 	border: 1px solid #e5e5e5;
-	/*-webkit-box-shadow: 5px 5px 2px #eeeeee;*/
 	overflow: hidden;
 }
 ._deal-li{
@@ -1323,7 +1305,6 @@ height: 168px;
 	position: absolute;
 	left: 0px;
 	top: 20px;
-	/*border: 1px solid #000000;*/
 	border-radius: 50%;
 }
 ._deal-span1{
