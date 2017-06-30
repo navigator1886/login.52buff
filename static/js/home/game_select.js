@@ -1,73 +1,28 @@
 $(function() {
-//选择游戏
-    jQuery.support.cors = true;
-    var gid = $('#gid').val();
-    var aid = $('#aid').val();
-    var sid = $('#sid').val();
-    $(document).ready(function(){
-        $.ajax({
-            url: api_url + "open/game/getGameList",
-            type: 'get',
-            dataType: "json",
-            success: function (data) {
-                var game_str = '';
-                for (var i = 0; i < data.length; i++) {
-                    game_str += '<li class="li_game" id="' + data[i].gid + '">'  + '<span>' + data[i].game_name + '</span>' + '</li>';
+//搜索框代码
+    jQuery.support.cors = true;     //是否跨域
+
+    var gid = $('#gid').val(),      //游戏id
+        nid = $('#nid').val(),      //网络id
+        bid = $('#bid').val(),      //大区id
+        aid = $('#aid').val(),      //服务器id
+        gameList = {},
+        areaList = [];
+    $(document).ready(function(){                  //获取游戏列表
+        $.get(api.getGameList,function (rcvData) {
+            if(rcvData.code == 0){
+                gameList = rcvData.data;
+                var htmlNode = '';
+                for(key in gameList){
+                    htmlNode += '<li class="li_game" id="' + key + '"><span>' + gameList.key +'</span></li>';
                 }
-                $('.first').append(game_str);
+                $('.first').append(htmlNode);
             }
-        });
-        if(gid){
-            $.ajax({
-                url: api_url + "open/game/getAreaList/gid/" + gid,
-                type: 'get',
-                data: "json",
-                success: function (data) {
-                    var area_str = '';
-                    for (var i = 0; i < data.length; i++) {
-                        area_str += '<li class="li_area"  id="' + data[i].aid + '">'  + '<span>' + data[i].area_name + '</span>' + '</li>';
-                    }
-                    $('.second').append(area_str);
-                }
-            });
-            $.ajax({
-                type: 'get',
+        },'json')
+    });
 
-                url: api_url + "open/game/getGoodsTypeList/gid/" + gid,
-                data: "json",
-                success: function (data) {
-                    var type_str = '';
-                    for (var i = 0; i < data.length; i++) {
-                        type_str += '<li class="li_type" id="' + data[i].goods_type_id + '">' + '<span>' + data[i].goods_type_name + '</span>' + '</li>';
-                    }
-                    $('.foured').append(type_str);
-
-                }
-            });
-        }
-        if(aid){
-            $.ajax({
-                type: 'get',
-
-                url: api_url + "open/game/getServerList/aid/" + aid,
-                data: "json",
-                success: function (data) {
-                    var server_str = '';
-                    for (var i = 0; i < data.length; i++) {
-                        server_str += '<li class="li_server" id="' + data[i].sid + '">'  + '<span>' + data[i].server_name + '</span>' + '</li>';
-                    }
-                    $('.tree').append(server_str);
-
-                }
-            });
-        }
-        })
-
-
-
-
-
-    $('.game-hot').click(function () {
+    //弹出游戏选择列表
+    $('.gameList').click(function () {
         var v = $('.main_con_1').is(":hidden");
         if (v) {
             $('.main_con_1').show();
@@ -75,35 +30,33 @@ $(function() {
             $('.main_con_3').hide();
             $('.main_con_4').hide();
             $(this).css('border-bottom', '4px solid #fff');
-            $('.area').css('border-bottom', '');
-            $('.server').css('border-bottom', '');
-            $('.goods').css('border-bottom', '');
-            $('.area').css('border-left-color', '#4CB9E7');
-            $('.server').css('border-left-color', '#efecec');
-            $('.goods').css('border-left-color', '#efecec');
-            $('.game-hot').children('.icon_down').addClass('cast_start');
-            $('.game-hot').children('.icon_down').removeClass('end_start');
-            $('.area').children('.icon_down').addClass('end_start');
-            $('.area').children('.icon_down').removeClass('cast_start');
-            $('.server').children('.icon_down').addClass('end_start');
-            $('.server').children('.icon_down').removeClass('cast_start');
-            $('.goods').children('.icon_down').addClass('end_start');
-            $('.goods').children('.icon_down').removeClass('cast_start');
-
-
+            $('.netList').css('border-bottom', '');
+            $('.bigAreaList').css('border-bottom', '');
+            $('.areaList').css('border-bottom', '');
+            $('.netList').css('border-left-color', '#4CB9E7');
+            $('.bigAreaList').css('border-left-color', '#efecec');
+            $('.areaList').css('border-left-color', '#efecec');
+            $('.gameList').children('.icon_down').addClass('cast_start');
+            $('.gameList').children('.icon_down').removeClass('end_start');
+            $('.netList').children('.icon_down').addClass('end_start');
+            $('.netList').children('.icon_down').removeClass('cast_start');
+            $('.bigAreaList').children('.icon_down').addClass('end_start');
+            $('.bigAreaList').children('.icon_down').removeClass('cast_start');
+            $('.areaList').children('.icon_down').addClass('end_start');
+            $('.areaList').children('.icon_down').removeClass('cast_start');
         } else {
             $('.main_con_1').hide();
             $(this).css('border-bottom', '');
-            $('.area').css('border-left-color', '#efecec');
-            $('.server').css('border-left-color', '#efecec');
-            $('.goods').css('border-left-color', '#efecec');
-            $('.game-hot').children('.icon_down').addClass('end_start');
-            $('.game-hot').children('.icon_down').removeClass('cast_start');
-
+            $('.netList').css('border-left-color', '#efecec');
+            $('.bigAreaList').css('border-left-color', '#efecec');
+            $('.areaList').css('border-left-color', '#efecec');
+            $('.gameList').children('.icon_down').addClass('end_start');
+            $('.gameList').children('.icon_down').removeClass('cast_start');
         }
     })
 
-    $('.area').click(function () {
+    //弹出网络选择列表
+    $('.netList').click(function () {
         var v = $('.main_con_2').is(":hidden");
         if (v) {
             $('.main_con_1').hide();
@@ -111,33 +64,34 @@ $(function() {
             $('.main_con_3').hide();
             $('.main_con_4').hide();
             $(this).css('border-bottom', '4px solid #fff');
-            $('.game-hot').css('border-bottom', '');
-            $('.server').css('border-bottom', '');
-            $('.goods').css('border-bottom', '');
-            $('.area').css('border-left-color', '#4CB9E7');
-            $('.server').css('border-left-color', '#4CB9E7');
-            $('.goods').css('border-left-color', '#efecec');
-            $('.area').children('.icon_down').addClass('cast_start');
-            $('.area').children('.icon_down').removeClass('end_start');
+            $('.gameList').css('border-bottom', '');
+            $('.bigAreaList').css('border-bottom', '');
+            $('.areaList').css('border-bottom', '');
+            $('.netList').css('border-left-color', '#4CB9E7');
+            $('.bigAreaList').css('border-left-color', '#4CB9E7');
+            $('.areaList').css('border-left-color', '#efecec');
+            $('.netList').children('.icon_down').addClass('cast_start');
+            $('.netList').children('.icon_down').removeClass('end_start');
 
-            $('.game-hot').children('.icon_down').addClass('end_start');
-            $('.game-hot').children('.icon_down').removeClass('cast_start');
-            $('.server').children('.icon_down').addClass('end_start');
-            $('.server').children('.icon_down').removeClass('cast_start');
-            $('.goods').children('.icon_down').addClass('end_start');
-            $('.goods').children('.icon_down').removeClass('cast_start');
+            $('.gameList').children('.icon_down').addClass('end_start');
+            $('.gameList').children('.icon_down').removeClass('cast_start');
+            $('.bigAreaList').children('.icon_down').addClass('end_start');
+            $('.bigAreaList').children('.icon_down').removeClass('cast_start');
+            $('.areaList').children('.icon_down').addClass('end_start');
+            $('.areaList').children('.icon_down').removeClass('cast_start');
         } else {
             $('.main_con_2').hide();
             $(this).css('border-bottom', '');
-            $('.area').css('border-left-color', '#efecec');
-            $('.server').css('border-left-color', '#efecec');
-            $('.goods').css('border-left-color', '#efecec');
-            $('.area').children('.icon_down').addClass('end_start');
-            $('.area').children('.icon_down').removeClass('cast_start');
+            $('.netList').css('border-left-color', '#efecec');
+            $('.bigAreaList').css('border-left-color', '#efecec');
+            $('.areaList').css('border-left-color', '#efecec');
+            $('.netList').children('.icon_down').addClass('end_start');
+            $('.netList').children('.icon_down').removeClass('cast_start');
         }
     })
 
-    $('.server').click(function () {
+    //弹出大区选择列表
+    $('.bigAreaList').click(function () {
         var v = $('.main_con_3').is(":hidden");
         if (v) {
             $('.main_con_1').hide();
@@ -145,35 +99,36 @@ $(function() {
             $('.main_con_3').show();
             $('.main_con_4').hide();
             $(this).css('border-bottom', '4px solid #fff');
-            $('.goods').css('border-bottom', '');
-            $('.area').css('border-bottom', '');
-            $('.game-hot').css('border-bottom', '');
-            $('.goods').css('border-left-color', '#4CB9E7');
-            $('.server').css('border-left-color', '#4CB9E7');
-            $('.area').css('border-left-color', '#efecec');
+            $('.areaList').css('border-bottom', '');
+            $('.netList').css('border-bottom', '');
+            $('.gameList').css('border-bottom', '');
+            $('.areaList').css('border-left-color', '#4CB9E7');
+            $('.bigAreaList').css('border-left-color', '#4CB9E7');
+            $('.netList').css('border-left-color', '#efecec');
 
-            $('.server').children('.icon_down').addClass('cast_start');
-            $('.server').children('.icon_down').removeClass('end_start');
+            $('.bigAreaList').children('.icon_down').addClass('cast_start');
+            $('.bigAreaList').children('.icon_down').removeClass('end_start');
 
-            $('.game-hot').children('.icon_down').addClass('end_start');
-            $('.game-hot').children('.icon_down').removeClass('cast_start');
-            $('.area').children('.icon_down').addClass('end_start');
-            $('.area').children('.icon_down').removeClass('cast_start');
-            $('.goods').children('.icon_down').addClass('end_start');
-            $('.goods').children('.icon_down').removeClass('cast_start');
+            $('.gameList').children('.icon_down').addClass('end_start');
+            $('.gameList').children('.icon_down').removeClass('cast_start');
+            $('.netList').children('.icon_down').addClass('end_start');
+            $('.netList').children('.icon_down').removeClass('cast_start');
+            $('.areaList').children('.icon_down').addClass('end_start');
+            $('.areaList').children('.icon_down').removeClass('cast_start');
 
         } else {
             $('.main_con_3').hide();
             $(this).css('border-bottom', '');
-            $('.area').css('border-left-color', '#efecec');
-            $('.server').css('border-left-color', '#efecec');
-            $('.goods').css('border-left-color', '#efecec');
-            $('.server').children('.icon_down').addClass('end_start');
-            $('.server').children('.icon_down').removeClass('cast_start');
+            $('.netList').css('border-left-color', '#efecec');
+            $('.bigAreaList').css('border-left-color', '#efecec');
+            $('.areaList').css('border-left-color', '#efecec');
+            $('.bigAreaList').children('.icon_down').addClass('end_start');
+            $('.bigAreaList').children('.icon_down').removeClass('cast_start');
         }
     })
 
-    $('.goods').click(function () {
+    //弹出服务器选择列表
+    $('.areaList').click(function () {
         var v = $('.main_con_4').is(":hidden");
         if (v) {
             $('.main_con_4').show();
@@ -182,215 +137,220 @@ $(function() {
             $('.main_con_3').hide();
 
             $(this).css('border-bottom', '4px solid #fff');
-            $('.area').css('border-bottom', '');
-            $('.server').css('border-bottom', '');
-            $('.game-hot').css('border-bottom', '');
-            $('.goods').css('border-left-color', '#4CB9E7');
-            $('.area').css('border-left-color', '#efecec');
-            $('.server').css('border-left-color', '#efecec');
+            $('.netList').css('border-bottom', '');
+            $('.bigAreaList').css('border-bottom', '');
+            $('.gameList').css('border-bottom', '');
+            $('.areaList').css('border-left-color', '#4CB9E7');
+            $('.netList').css('border-left-color', '#efecec');
+            $('.bigAreaList').css('border-left-color', '#efecec');
 
-            $('.goods').children('.icon_down').addClass('cast_start');
-            $('.goods').children('.icon_down').removeClass('end_start');
+            $('.areaList').children('.icon_down').addClass('cast_start');
+            $('.areaList').children('.icon_down').removeClass('end_start');
 
-            $('.game-hot').children('.icon_down').addClass('end_start');
-            $('.game-hot').children('.icon_down').removeClass('cast_start');
-            $('.area').children('.icon_down').addClass('end_start');
-            $('.area').children('.icon_down').removeClass('cast_start');
-            $('.server').children('.icon_down').addClass('end_start');
-            $('.server').children('.icon_down').removeClass('cast_start');
+            $('.gameList').children('.icon_down').addClass('end_start');
+            $('.gameList').children('.icon_down').removeClass('cast_start');
+            $('.netList').children('.icon_down').addClass('end_start');
+            $('.netList').children('.icon_down').removeClass('cast_start');
+            $('.bigAreaList').children('.icon_down').addClass('end_start');
+            $('.bigAreaList').children('.icon_down').removeClass('cast_start');
         } else {
             $('.main_con_4').hide();
             $(this).css('border-bottom', '');
-            $('.area').css('border-left-color', '#efecec');
-            $('.server').css('border-left-color', '#efecec');
-            $('.goods').css('border-left-color', '#efecec');
-            $('.goods').children('.icon_down').addClass('end_start');
-            $('.goods').children('.icon_down').removeClass('cast_start');
+            $('.netList').css('border-left-color', '#efecec');
+            $('.bigAreaList').css('border-left-color', '#efecec');
+            $('.areaList').css('border-left-color', '#efecec');
+            $('.areaList').children('.icon_down').addClass('end_start');
+            $('.areaList').children('.icon_down').removeClass('cast_start');
         }
     })
 
-
-
+    //选择游戏，获取游戏id
     $('.first').on('click', '.li_game', function () {
+        gid = $(this).attr('id');                   //获取所选择的游戏id
 
-//					样式
+        //样式
         $(this).css('color', '#4CB9E7');
         $(this).siblings().css('color', '#333');
         $(this).parent().css('display', 'none');
-        $('.area_name').remove();
-        $('.li_server').remove();
-        $('.li_type').remove();
-        $('.main_con_1').hide();
+        if(gid != $('#gid').val()){                 //如果选择的游戏和之前选择的不相同
+            $('#gid').val(gid);                     //清空之前的选项
+            $('#nid').val('');
+            $('#bid').val('');
+            $('#aid').val('');
+
+            $('.sel_game').html($(this).children('span').text());
+            $('.sel_net').html('选择网络');
+            $('.sel_bigArea').html('选择大区');
+            $('.sel_area').html('服务器');
+
+            $('.second').children().remove();                   //清空网络,大区，服务器列表
+            $('.third').children().remove();
+            $('.fourth').children().remove();
+        }
+
+        $('.main_con_1').hide();                    //自动跳到选择网络
         $('.main_con_2').show();
         $('.main_con_3').hide();
         $('.main_con_4').hide();
         $('.first').show();
-        $('.game_hoter').html($(this).children('span').text());
-        $('.game_ears').html('选择大区');
-        $('.game_typer').html('选择服务器');
-        $('.game_templt').html('选择商品类型');
 
-        $('.game-hot').children('.icon_down').addClass('end_start');
-        $('.game-hot').children('.icon_down').removeClass('cast_start');
+        $('.gameList').children('.icon_down').addClass('end_start');
+        $('.gameList').children('.icon_down').removeClass('cast_start');
 
-        $('.area').children('.icon_down').addClass('cast_start');
-        $('.area').children('.icon_down').removeClass('end_start');
+        $('.netList').children('.icon_down').addClass('cast_start');
+        $('.netList').children('.icon_down').removeClass('end_start');
 
 
+        $('.gameList').css('border-bottom', '');
+        $('.netList').css('border-bottom', '4px solid #fff');
+        $('.netList').css('border-left-color', '#4CB9E7');
+        $('.bigAreaList').css('border-left-color', '#4CB9E7');
+        $('.areaList').css('border-left-color', '#ffecec');
 
-        $('.game-hot').css('border-bottom', '');
-        $('.area').css('border-bottom', '4px solid #fff');
-        $('.area').css('border-left-color', '#4CB9E7');
-        $('.server').css('border-left-color', '#4CB9E7');
-        $('.goods').css('border-left-color', '#ffecec');
-        $('.second').children().remove();
-        gid = $(this).attr('id');
-        $('#gid').val(gid);
-        $('#aid').val('');
-        $('#sid').val('');
-        $('#goods_type_id').val('');
-        $.ajax({
-            type: 'get',
-            url: api_url + "open/game/getAreaList/gid/" + gid,
-            data: "json",
-            success: function (data) {
-
-                var area_str = '';
-                for (var i = 0; i < data.length; i++) {
-                    area_str += '<li class="li_area"  id="' + data[i].aid + '">'  + '<span>' + data[i].area_name + '</span>' + '</li>';
+        $.get(api.getNetList,{gameId: gid},function (rcvData) {     //加载对应的网络列表
+            if(rcvData.code == 0){
+                var netList = rcvData.data;
+                var htmlNode = '';
+                for(key in netList){
+                    htmlNode += '<li class="li_net" id="' + key +'"><span>' + netList.key + '</span></li>';
                 }
-                $('.second').append(area_str);
-
+                $('.second').append(htmlNode);
             }
-        });
+        },'json')
     })
 
+    //选择网络，获取网络id
+    $('.second').on('click', '.li_net', function () {
+        nid = $(this).attr('id');
+        if(nid != $('#nid').val()){
+            $('#nid').val(nid);
+            $('#bid').val('');
+            $('#aid').val('');
 
-//点击大区显示服务器
-    $('.second').on('click', '.li_area', function () {
+            $('.sel_net').html($(this).children('span').text());
+            $('.sel_bigarea').html('选择大区');
+            $('.sel_area').html('服务器');
+
+            $('.third').children().remove();                //清空大区列表和服务器列表
+            $('.fourth').children().remove();
+
+        }
         $('.main_con_1').hide();
         $('.main_con_2').hide();
         $('.main_con_3').show();
         $('.main_con_4').hide();
 
-        $('.game_ears').html($(this).children('span').text());
-        $('.game_typer').html('选择服务器');
-        $('.area').css('border-bottom', '');
-        $('.server').css('border-bottom', '4px solid #fff');
+
+        $('.netList').css('border-bottom', '');
+        $('.bigAreaList').css('border-bottom', '4px solid #fff');
         $(this).css('color', '#4CB9E7');
         $(this).siblings().css('color', '#333');
-        $('.area').children('.icon_down').addClass('end_start');
-        $('.area').children('.icon_down').removeClass('cast_start');
+        $('.netList').children('.icon_down').addClass('end_start');
+        $('.netList').children('.icon_down').removeClass('cast_start');
 
+        $('.bigAreaList').children('.icon_down').addClass('cast_start');
+        $('.bigAreaList').children('.icon_down').removeClass('end_start');
 
-        $('.server').children('.icon_down').addClass('cast_start');
-        $('.server').children('.icon_down').removeClass('end_start');
+        $('.areaList').css('border-left-color', '#4CB9E7');
+        $('.bigAreaList').css('border-left-color', '#4CB9E7');
+        $('.netList').css('border-left-color', '#ffecec');
 
-        $('.goods').css('border-left-color', '#4CB9E7');
-        $('.server').css('border-left-color', '#4CB9E7');
-        $('.area').css('border-left-color', '#ffecec');
-
-        $('.tree').children().remove();
-        aid = $(this).attr('id');
-        $('#aid').val(aid);
-        $('#sid').val('');
-        $('#goods_type_id').val('');
-        $.ajax({
-            type: 'get',
-            url: api_url + "open/game/getServerList/aid/" + aid,
-            data: "json",
-            success: function (data) {
-                var server_str = '';
-                for (var i = 0; i < data.length; i++) {
-                    server_str += '<li class="li_server" id="' + data[i].sid + '">'  + '<span>' + data[i].server_name + '</span>' + '</li>';
+        $.get(api.getAreaList,{netId: nid},function (rcvData) {     //加载对应的大区和服务器列表
+            if(rcvData.code == 0){
+                areaList = rcvData.data;
+                var htmlNode = '';
+                for( index in areaList){
+                    for(key in areaList[index]["bigArea"]){
+                        htmlNode += '<li class="li_bigArea" id="' + key +'"><span>'
+                            + areaList[index]["bigArea"][key] + '</span></li>';
+                    }
                 }
-                $('.tree').append(server_str);
-
+                $('.third').append(htmlNode);
             }
-        });
-
-
+        },'json')
     })
 
-    $('.tree').on('click', '.li_server', function () {
+    //选择大区，获取大区id
+    $('.third').on('click', '.li_bigArea', function () {
+        bid = $(this).attr('id');
+        if(bid != $('#bid').val()){
+            $('#bid').val(bid);
+
+            $('.sel_bigArea').html($(this).children('span').text());
+            $('.sel_area').html('服务器');
+
+            $('.fourth').children().remove();
+
+            if($.isEmptyObject(areaList)){
+                $.get(api.getAreaList,{netId: nid},function (rcvData) {
+                    if(rcvData.code == 0){
+                        areaList = rcvData.data;
+                    }
+                },'json')
+            }
+            var htmlNode = '';
+            for(var index in areaList){
+                    if(areaList[index]["bigArea"][bid]){
+                        for(var key in areaList[index]["area"]){
+                            htmlNode += '<li class="li_area" id="' + key +'"><span>'
+                                + areaList[index]["area"][key] + '</span></li>';
+                        }
+                    }
+                }
+            $('.fourth').append(htmlNode);
+        }
 
         $('.main_con_1').hide();
         $('.main_con_2').hide();
         $('.main_con_3').hide();
         $('.main_con_4').show();
-        $('.game_typer').html($(this).children('span').text());
-        $('.server').css('border-bottom', '');
-        $('.goods').css('border-bottom', '4px solid #fff');
 
-        $('.goods').css('border-left-color', '#4CB9E7');
-        $('.server').css('border-left-color', '#ffecec');
-        $('.area').css('border-left-color', '#ffecec');
-        sid = $(this).attr('id');
-        $('#sid').val(sid);
+        $('.bigAreaList').css('border-bottom', '');
+        $('.areaList').css('border-bottom', '4px solid #fff');
 
-        $('.server').children('.icon_down').addClass('end_start');
-        $('.server').children('.icon_down').removeClass('cast_start');
+        $('.netList').css('border-left-color', '#ffecec');
+        $('.bigAreaList').css('border-left-color', '#ffecec');
+        $('.areaList').css('border-left-color', '#4CB9E7');
 
-        $('.goods').children('.icon_down').addClass('cast_start');
-        $('.goods').children('.icon_down').removeClass('end_start');
+        $('.bigAreaList').children('.icon_down').addClass('end_start');
+        $('.bigAreaList').children('.icon_down').removeClass('cast_start');
 
-    })
+        $('.areaList').children('.icon_down').addClass('cast_start');
+        $('.areaList').children('.icon_down').removeClass('end_start');
 
+    });
 
-    $('.first').on('click', '.li_game', function () {
-        $('.foured').children().remove();
-        var gid = $(this).attr('id');
-        $('.main_con_4').hide();
+    //选择服务器，获取服务器id
+    $('.fourth').on('click', '.li_area', function () {
+        aid = $(this).attr('id');
+        if(aid != $('#aid').val()){
+            $('#aid').val(aid);
+            $('.game_templt').html($(this).children('span').text());
 
-        $.ajax({
-            type: 'get',
-            url: api_url + "open/game/getGoodsTypeList/gid/" + gid,
-            data: "json",
-            success: function (data) {
-                var type_str = '';
-                for (var i = 0; i < data.length; i++) {
-                    type_str += '<li class="li_type" id="' + data[i].goods_type_id + '">' + '<span>' + data[i].goods_type_name + '</span>' + '</li>';
-                }
-                $('.foured').append(type_str);
+        }
 
-            }
-        });
-
-
-    })
-
-    $('.foured').on('click', '.li_type', function () {
-        $('.game_templt').html($(this).children('span').text());
         $('.main_con_1').hide();
         $('.main_con_2').hide();
         $('.main_con_3').hide();
         $('.main_con_4').hide();
 
-        $('.goods').css('border-bottom', '2px solid #ff4747');
+        $('.areaList').css('border-bottom', '2px solid #ff4747');
         $(this).css('color', '#4CB9E7');
         $(this).siblings().css('color', '#333');
-        var goods_type_id = $(this).attr('id');
-        $('#goods_type_id').val(goods_type_id);
 
-        $('.goods').children('.icon_down').addClass('end_start');
-        $('.goods').children('.icon_down').removeClass('cast_start');
-        var gid = $('#gid').val();
-        var aid = $('#aid').val();
-        var sid = $('#sid').val();
-        var goods_type_id = $('#goods_type_id').val();
-        if(!goods_type_id){
-            goods_type_id = 1;
-        }
-        if (gid) {
-            window.location.href = "/goods/lists?gid=" + gid + "&aid=" + aid + "&sid=" + sid + "&goods_type_id=" + goods_type_id;
-        }
-    })
+        $('.areaList').children('.icon_down').addClass('end_start');
+        $('.areaList').children('.icon_down').removeClass('cast_start');
 
+        //获取在售商品，页面跳转
+
+    });
+
+    //下拉框关闭按钮
     $('.turnoff').click(function () {
-        $('.game-hot').css('border-bottom', '2px solid #ff4747');
-        $('.area').css('border-bottom', '2px solid #ff4747');
-        $('.server').css('border-bottom', '2px solid #ff4747');
-        $('.goods').css('border-bottom', '2px solid #ff4747');
+        $('.gameList').css('border-bottom', '2px solid #58B7FF');
+        $('.netList').css('border-bottom', '2px solid #58B7FF');
+        $('.bigAreaList').css('border-bottom', '2px solid #58B7FF');
+        $('.areaList').css('border-bottom', '2px solid #58B7FF');
     })
 
 
@@ -473,7 +433,6 @@ $(function() {
 
 
     //字母搜索功能
-
     $('.a_game').click(function(){
         var obj = $(this).html();
         $('.li_game').remove();
@@ -525,9 +484,5 @@ $(function() {
     if(_height1 > 300) {
         $('.con_list').addClass('flow_all');
     }
-
-
 });
-
-
 

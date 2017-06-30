@@ -13,7 +13,8 @@
     <meta name="renderer" content="webkit">
     <title>52buff游戏币交易平台_DNF游戏币交易平台_BNS剑灵游戏币交易平台_国内最专业、安全、贴心、高效的游戏币交易平台-52buff.com</title>
     <meta name="keywords" content="游戏交易，游戏币交易，游戏装备交易，游戏账号交易，手机游戏交易，代练服务，游戏陪玩">
-    <meta name="description" content="52buff游戏服务网，专业游戏交易服务平台，提供网络游戏币交易、游戏装备交易、游戏帐号交易、点卡交易、激活码交易、游戏材料交易以及专业的代练服务，是国内最服务最好、最贴心、最安全的网络游戏交易平台，更简单交易，更轻松游戏">
+    <meta name="description"
+          content="52buff游戏服务网，专业游戏交易服务平台，提供网络游戏币交易、游戏装备交易、游戏帐号交易、点卡交易、激活码交易、游戏材料交易以及专业的代练服务，是国内最服务最好、最贴心、最安全的网络游戏交易平台，更简单交易，更轻松游戏">
     <link rel="stylesheet" href="./static/css/index.css">
     <link rel="stylesheet" type="text/css" href="./static/css/backtop.css"/>
     <script src="./static/js/jquery-3.1.1.min.js"></script>
@@ -24,11 +25,14 @@
     <link rel="stylesheet" href="./static/layer/skin/default/layer.css">
     <style>
         input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button{
+        input::-webkit-inner-spin-button {
             -webkit-appearance: none !important;
             margin: 0;
         }
-        input[type="number"]{-moz-appearance:textfield;}
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
     </style>
 </head>
 
@@ -36,8 +40,9 @@
 <div class="header">
     <div class="header-width">
         <div class="header-left">
-                        <span>您好，欢迎访问52buff游戏交易平台!</span>&nbsp;&nbsp;
-            <a href="#"><img src="./static/images/icon/qq_login.png" style="border: none;margin-top: -5px;vertical-align: middle;margin-left: 20px"/></a>
+            <span>您好，欢迎访问52buff游戏交易平台!</span>&nbsp;&nbsp;
+            <a href="#"><img src="./static/images/icon/qq_login.png"
+                             style="border: none;margin-top: -5px;vertical-align: middle;margin-left: 20px"/></a>
             <a href="#">
                 <span class="login">登录</span>
             </a>
@@ -46,7 +51,7 @@
                 <!--<i class="icon_free"></i>-->
                 <span class="logins">免费注册</span>
             </a>
-                    </div>
+        </div>
         <div class="header-right">
             <span style="float: left"><a href="#" class="mine_all" style="margin-right: 10px;">我的52buff</a></span>
             <ul class="help-center">
@@ -116,7 +121,8 @@
         background: red;
     }
 </style>
-<!--logo 搜索-->
+
+<!-- 顶部搜索框 -->
 <div class="logo-search">
     <div class="logo">
         <a href="http://www.52buff.com/" style="display:block;float: left;margin-top: 32px">
@@ -127,14 +133,16 @@
         <form>
             <ul class="search_g">
                 <input type="hidden" id="gid"/>
+                <input type="hidden" id="nid"/>
+                <input type="hidden" id="bid"/>
                 <input type="hidden" id="aid"/>
-                <input type="hidden" id="sid"/>
-                <input type="hidden" id="goods_type_id"/>
-                <li class="game-hot"><span class="game_hoter">选择游戏</span><i class="icon_down"></i></li>
-                <li class="area"><span class="game_ears">选择大区</span><i class="icon_down"></i></li>
-                <li class="server"><span class="game_typer">选择服务器</span><i class="icon_down"></i></li>
-                <li class="goods"><span class="game_templt">选择商品类型</span><i class="icon_down"></i></li>
-                <li style="border-left: 0"><div class="submit" id="goods_list" style="text-align: center;">立即搜索</div></li>
+                <li class="gameList"><span class="sel_game">选择游戏</span><i class="icon_down"></i></li>
+                <li class="netList"><span class="sel_net">选择网络</span><i class="icon_down"></i></li>
+                <li class="bigAreaList"><span class="sel_bigArea">选择大区</span><i class="icon_down"></i></li>
+                <li class="areaList"><span class="sel_area">选择服务器</span><i class="icon_down"></i></li>
+                <li style="border-left: 0">
+                    <div class="submit" id="goods_list" style="text-align: center;">立即搜索</div>
+                </li>
             </ul>
             <p class="search_p">热门游戏：<a href="http://www.52buff.com/goods/lists/gid/1.html">地下城与勇士</a></p>
         </form>
@@ -181,9 +189,11 @@
                         <a href="javascript:void(0)" class="a_game">Y</a>
                         <a href="javascript:void(0)" class="a_game">Z</a>
                     </ul>
-                        <input type="hidden" id="my_game"/>
-                        <input type="hidden" id="my_gid"/>
-                        <ul class=" first con_list "></ul>
+                    <input type="hidden" id="my_game"/>
+                    <input type="hidden" id="my_gid"/>
+                    <ul class=" first con_list ">
+
+                    </ul>
                 </div>
                 <div id="tab222" style="display:none;">
                     <ul class="con_list" id="letter_game">
@@ -220,7 +230,7 @@
                 <div>
                     <input type="hidden" id="my_server"/>
                     <input type="hidden" id="my_sid"/>
-                    <ul class="tree con_list">
+                    <ul class="third con_list">
 
                     </ul>
                 </div>
@@ -237,7 +247,7 @@
                 <div>
                     <input type="hidden" id="my_type"/>
                     <input type="hidden" id="my_type_id"/>
-                    <ul class="foured con_list">
+                    <ul class="fourth con_list">
 
                     </ul>
                 </div>
@@ -282,13 +292,16 @@
         <div class="slider">
             <ul class="slider-main">
                 <li class="slider-panel">
-                    <a href="http://www.52buff.com/help/detail/id/50.html"><img src="./static/images/banner/banner02.png" alt="" style="border: none"></a>
+                    <a href="http://www.52buff.com/help/detail/id/50.html"><img
+                            src="./static/images/banner/banner02.png" alt="" style="border: none"></a>
                 </li>
                 <li class="slider-panel">
-                    <a href="http://www.52buff.com/help/detail/id/53.html"> <img src="./static/images/banner/banner02.png" alt="" style="border: none"></a>
+                    <a href="http://www.52buff.com/help/detail/id/53.html"> <img
+                            src="./static/images/banner/banner02.png" alt="" style="border: none"></a>
                 </li>
                 <li class="slider-panel">
-                    <a href="http://www.52buff.com/help/detail/id/54.html"><img src="./static/images/banner/banner02.png" alt="" style="border: none"></a>
+                    <a href="http://www.52buff.com/help/detail/id/54.html"><img
+                            src="./static/images/banner/banner02.png" alt="" style="border: none"></a>
                 </li>
                 <div class="clear"></div>
             </ul>
@@ -302,16 +315,14 @@
         </div>
         <!--最新公告-->
         <div class="news">
-                        <a href="http://www.52buff.com/help/detail/id/53.html">
-                <p><img src="#"
-                        style="margin-left: 10px;vertical-align: middle;margin-top: -5px;border: none"/><strong>最新公告：</strong>试运营阶段免交易服务费<span style="float:right;">06/13</span>
-                </p>
+            <a href="http://www.52buff.com/help/detail/id/53.html">
+                <p><img src="#" style="margin-left: 10px;vertical-align: middle;margin-top: -5px;border: none"/><strong>最新公告：</strong>试运营阶段免交易服务费<span
+                        style="float:right;">06/13</span></p>
             </a>
-                        <a href="http://www.52buff.com/help/detail/id/54.html">
-                <p><span class="lines"></span>&nbsp;消费免单活动公告<span style="float:right;">06/13</span>
-                </p>
+            <a href="http://www.52buff.com/help/detail/id/54.html"><p><span class="lines"></span>&nbsp;消费免单活动公告<span
+                    style="float:right;">06/13</span></p>
             </a>
-                    </div>
+        </div>
         <!--右侧买卖-->
         <div class="buy">
             <div class="tabs" style="width: 336px;height: 34px;line-height: 34px; background-color: #58B7FF">
@@ -381,14 +392,19 @@
                             <div class="qiehuan_02" style="display: none;">
                                 <span class="label">购买金额&nbsp;:</span>
                                 <input type="text" class="text" name="shop_num" id="buy_money" maxlength="6">
-                                <span class="jinbi" style="visibility:hidden;">元=<span id="money_for_num"></span><span class="unit_name">万金币</span></span>
+                                <span class="jinbi" style="visibility:hidden;">元=<span id="money_for_num"></span><span
+                                        class="unit_name">万金币</span></span>
                                 <div class="clear"></div>
                             </div>
-                            <p style="margin-bottom:5px;height:19px;" id="show_goods">金币价格：<span id="show_price">请选择区服</span>&nbsp;&nbsp;库存：<span id="show_stock">请选择区服</span></p>
-                            <p style="margin-top: 0px">应付金额&nbsp;: <span style="color:#ff8a05;margin-left: 7px;font-size: 20px;margin-right: 5px;font-weight: bold"
+                            <p style="margin-bottom:5px;height:19px;" id="show_goods">金币价格：<span
+                                    id="show_price">请选择区服</span>&nbsp;&nbsp;库存：<span id="show_stock">请选择区服</span></p>
+                            <p style="margin-top: 0px">应付金额&nbsp;: <span
+                                    style="color:#ff8a05;margin-left: 7px;font-size: 20px;margin-right: 5px;font-weight: bold"
                                     id="order_amount">0.00</span>元</p>
-                            <p style="margin-top: 10px;color: #ff4747;visibility:hidden;margin-bottom:5px;" class="error_s"><img src="#"
-                                    style="border: none;vertical-align: middle;margin-top: -5px;margin-right: 2px"/><span class="error_des">请选择游戏区服</span></p>
+                            <p style="margin-top: 10px;color: #ff4747;visibility:hidden;margin-bottom:5px;"
+                               class="error_s"><img src="#"
+                                                    style="border: none;vertical-align: middle;margin-top: -5px;margin-right: 2px"/><span
+                                    class="error_des">请选择游戏区服</span></p>
                             <div class="btn">
                                 <div class="btn-sub">立即购买</div>
                             </div>
@@ -554,117 +570,102 @@
             <!--常见问题-->
             <div class="matter">
                 <h2><img src="./static/images/icon/matters.png" alt=""><span>常见问题</span><a
-                        href="http://www.52buff.com/help/lists/type/7.html" class="more" style="color: #FFFFFF">更多>></a></h2>
+                        href="http://www.52buff.com/help/lists/type/7.html" class="more" style="color: #FFFFFF">更多>></a>
+                </h2>
 
                 <div class="matter-matter">
-                                        <ul class="_matter">
+                    <ul class="_matter">
                         <img src="http://static.52buff.com/icon/circle.png" style="border: none;margin-left: 10px"/><a
                             href="#"
                             style="color: #333;font-size: 14px">支持的银行卡，到账时间和收费标准</a></li>
                         <p style="color:#999">支持的银行卡，到账时间和收费标准</p>
                     </ul>
-                                        <ul class="_matter">
+                    <ul class="_matter">
                         <img src="http://static.52buff.com/icon/circle.png" style="border: none;margin-left: 10px"/><a
                             href="#"
                             style="color: #333;font-size: 14px">支付帮助</a></li>
                         <p style="color:#999">如果您的支付宝或者微信已经扣除资金，但是订单没有购买成功</p>
                     </ul>
-                                        <ul class="_matter">
-                        <img src="http://static.52buff.com/icon/circle.png" style="border: none;margin-left: 10px"/><a
-                            href="#"
-                            style="color: #333;font-size: 14px">兑换金豆/交纳押金成功后，未到账？</a></li>
-                        <p style="color:#999">如果您的银行卡资金已经扣除，但是金豆/押金没有到账</p>
-                    </ul>
-                                    </div>
+                </div>
             </div>
             <!--最新交易-->
             <div class="deal">
                 <h2><img src="./static/images/icon/new_deal.png" alt="img"><span>最新交易</span></h2>
                 <div class="deal-deal" style="margin-bottom:0px;">
                     <div id="con" class="_deal">
-                                                <ul class="_deal-ul">
-                                                        <li class="_deal-li">
+                        <ul class="_deal-ul">
+                            <li class="_deal-li">
                                 <img src="http://static.52buff.com//avatar/default/avatar01.png" alt="">
                                 <span class="_deal-span1">183******80</span>
                                 <span class="_deal-span2">购买</span>
                                 <span class="_deal-span3">2分钟前</span>
                                 <p>【地下城与勇士/湖北区/湖北1区】&nbsp;以价格0.03元购买了500万金币=15.00元</p>
-
                             </li>
-                                                        <li class="_deal-li">
+                            <li class="_deal-li">
                                 <img src="http://static.52buff.com//avatar/default/avatar01.png" alt="">
                                 <span class="_deal-span1">147******32</span>
                                 <span class="_deal-span2">购买</span>
                                 <span class="_deal-span3">12分钟前</span>
                                 <p>【地下城与勇士/四川区/四川6区】&nbsp;以价格0.03元购买了503万金币=14.00元</p>
-
                             </li>
-                                                        <li class="_deal-li">
+                            <li class="_deal-li">
                                 <img src="http://static.52buff.com//avatar/default/avatar01.png" alt="">
                                 <span class="_deal-span1">153******03</span>
                                 <span class="_deal-span2">购买</span>
                                 <span class="_deal-span3">24分钟前</span>
                                 <p>【地下城与勇士/广东区/广东5区】&nbsp;以价格13.64元购买了500万金币=13.64元</p>
-
                             </li>
-                                                        <li class="_deal-li">
+                            <li class="_deal-li">
                                 <img src="http://static.52buff.com//avatar/default/avatar01.png" alt="">
                                 <span class="_deal-span1">150******31</span>
                                 <span class="_deal-span2">购买</span>
                                 <span class="_deal-span3">24分钟前</span>
                                 <p>【地下城与勇士/上海区/上海2区】&nbsp;以价格50.00元购买了1727万金币=50.00元</p>
-
                             </li>
-                                                        <li class="_deal-li">
+                            <li class="_deal-li">
                                 <img src="http://static.52buff.com//avatar/default/avatar01.png" alt="">
                                 <span class="_deal-span1">135******71</span>
                                 <span class="_deal-span2">购买</span>
                                 <span class="_deal-span3">2小时前</span>
                                 <p>【地下城与勇士/四川区/四川1区】&nbsp;以价格0.03元购买了22222万金币=600.00元</p>
-
                             </li>
-                                                        <li class="_deal-li">
+                            <li class="_deal-li">
                                 <img src="http://static.52buff.com//avatar/default/avatar01.png" alt="">
                                 <span class="_deal-span1">131******12</span>
                                 <span class="_deal-span2">购买</span>
                                 <span class="_deal-span3">3小时前</span>
                                 <p>【地下城与勇士/四川区/四川1区】&nbsp;以价格0.03元购买了520万金币=14.00元</p>
-
                             </li>
-                                                        <li class="_deal-li">
+                            <li class="_deal-li">
                                 <img src="http://static.52buff.com//avatar/default/avatar01.png" alt="">
                                 <span class="_deal-span1">131******12</span>
                                 <span class="_deal-span2">购买</span>
                                 <span class="_deal-span3">3小时前</span>
                                 <p>【地下城与勇士/四川区/四川1区】&nbsp;以价格0.03元购买了520万金币=14.00元</p>
-
                             </li>
-                                                        <li class="_deal-li">
+                            <li class="_deal-li">
                                 <img src="http://static.52buff.com//avatar/default/avatar01.png" alt="">
                                 <span class="_deal-span1">150******45</span>
                                 <span class="_deal-span2">购买</span>
                                 <span class="_deal-span3">3小时前</span>
                                 <p>【地下城与勇士/陕西区/陕西1区】&nbsp;以价格50.00元购买了1833万金币=50.00元</p>
-
                             </li>
-                                                        <li class="_deal-li">
+                            <li class="_deal-li">
                                 <img src="http://static.52buff.com//avatar/default/avatar01.png" alt="">
                                 <span class="_deal-span1">182******57</span>
                                 <span class="_deal-span2">购买</span>
                                 <span class="_deal-span3">3小时前</span>
                                 <p>【地下城与勇士/西南区/西南1区】&nbsp;以价格0.03元购买了862万金币=25.00元</p>
-
                             </li>
-                                                        <li class="_deal-li">
+                            <li class="_deal-li">
                                 <img src="http://static.52buff.com//avatar/default/avatar01.png" alt="">
                                 <span class="_deal-span1">182******57</span>
                                 <span class="_deal-span2">购买</span>
                                 <span class="_deal-span3">4小时前</span>
                                 <p>【地下城与勇士/西南区/西南1区】&nbsp;以价格0.03元购买了501万金币=15.00元</p>
-
                             </li>
-                                                    </ul>
-                                            </div>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -710,12 +711,18 @@
             <a href="http://www.52buff.com/about/index.html#a6">&nbsp;联系我们&nbsp;</a>|
             <a href="http://www.52buff.com/about/index.html#a3">&nbsp;人才招聘&nbsp;</a>|
             <a href="http://www.52buff.com/help/index.html">&nbsp;帮助中心&nbsp;</a>
-            <p>Copyright © 52buff游戏币交易平台   网站备案号：粤ICP备17063268号-1(广州巴弗游信息科技有限公司)</p>
+            <p>Copyright © 52buff游戏币交易平台 网站备案号：粤ICP备17063268号-1(广州巴弗游信息科技有限公司)</p>
         </div>
     </div>
 </div>
 <script>
-    $('#top').click(function() {
+    var host = 'http://http://trade.api.52buff.com',
+        api = {
+            getGameList: host + '/common/game/getAllGameList',
+            getNetList: host + '/common/game/getNetList',
+            getAreaList: host + '/common/game/getAreaList'
+        };
+    $('#top').click(function () {
         $('body,html').animate({
             scrollTop: 0
         }, 500);
@@ -723,7 +730,6 @@
     })
 </script>
 <script>
-    var api_url = 'http://serv.52buff.com/';
     //			最新交易
     $(document).ready(function () {
         setInterval('autoScroll("#con")', 3000);
@@ -739,6 +745,7 @@
         });
     }
 
+    //立即搜索按钮
     $('#goods_list').click(function () {
         var gid = $('#gid').val();
         var aid = $('#aid').val();
@@ -785,14 +792,14 @@
         var shop_id = $('#shop_id').val();
         var max_num = $('#max_num').val();
         if (!shop_id) {
-            $('.error_s').css('visibility','inherit');
+            $('.error_s').css('visibility', 'inherit');
             return false;
         } else {
-            $('.error_s').css('visibility','hidden');
+            $('.error_s').css('visibility', 'hidden');
         }
-        if(parseInt(buy_num) > parseInt(max_num)){
+        if (parseInt(buy_num) > parseInt(max_num)) {
             $('.error_des').html("购买数量不能大于" + max_num);
-            $('.error_s').css('visibility','inherit');
+            $('.error_s').css('visibility', 'inherit');
             return false;
         }
 
@@ -809,61 +816,61 @@
         }
     });
 
-    $('.kf_qq').click(function(){
+    $('.kf_qq').click(function () {
         var kf_qq = $('#kf_qq').val();
-        if(!kf_qq){
+        if (!kf_qq) {
             layer.msg('请输入QQ号码');
             return false;
         }
         $.ajax({
             url: 'http://www.52buff.com/index/validateqq.html?kf_qq=' + kf_qq,
             type: 'get',
-            success: function(data){
+            success: function (data) {
                 layer.msg(data.msg);
             }
         });
     });
 
-    $('.qq_qun').click(function(){
+    $('.qq_qun').click(function () {
         var qq_qun = $('#qq_qun').val();
-        if(!qq_qun){
+        if (!qq_qun) {
             layer.msg('请输入QQ群号码');
             return false;
         }
         $.ajax({
             url: 'http://www.52buff.com/index/validateqqqun.html?qq_qun=' + qq_qun,
             type: 'get',
-            success: function(data){
+            success: function (data) {
                 layer.msg(data.msg);
             }
         });
     });
 
-    $('.kf_email').click(function(){
+    $('.kf_email').click(function () {
         var kf_email = $('#kf_email').val();
-        if(!kf_email){
+        if (!kf_email) {
             layer.msg('请输入邮箱账号');
             return false;
         }
         $.ajax({
             url: 'http://www.52buff.com/index/validateemail.html?kf_email=' + kf_email,
             type: 'get',
-            success: function(data){
+            success: function (data) {
                 layer.msg(data.msg);
             }
         });
     });
 
-    $('.self_url').click(function(){
+    $('.self_url').click(function () {
         var self_url = $('#self_url').val();
-        if(!self_url){
+        if (!self_url) {
             layer.msg('请输入网址');
             return false;
         }
         $.ajax({
             url: 'http://www.52buff.com/index/validateurl.html?self_url=' + self_url,
             type: 'get',
-            success: function(data){
+            success: function (data) {
                 layer.msg(data.msg);
             }
         });

@@ -314,7 +314,7 @@ textarea { -webkit-appearance: none;}
 	display: inline-block;
 	width: 22px;
 	height: 22px;
-	background: url("../icon/icon_all2.png") -127px -171px no-repeat;
+	background: url("../images/icon/down.png") 0 0 no-repeat;
 	float: right;
 	margin-top: 8px;
 }
@@ -412,7 +412,7 @@ textarea { -webkit-appearance: none;}
 	display: block;
 	width:30px;
 	height:30px;
-	background: url("../icon/icon_all2.png") -19px -251px no-repeat;
+	background: url("../images/icon/close.png") 0 0 no-repeat;
 	position:absolute;
 	top:8px;
 	right:4px;

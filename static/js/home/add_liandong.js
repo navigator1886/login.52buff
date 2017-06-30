@@ -1,28 +1,21 @@
-//	添加新角色
-
-//游戏
-
-
+//右侧快速购买框代码
 $(function () {
     $('.game_name_1').click(function () {
-        $.ajax({
-            type: 'get',
-            url: api_url + "open/game/getGameList",
-            dataType: "json",
-            success: function (data) {
-                var game_str_1 = '';
-                for (var i = 0; i < data.length; i++) {
-                    game_str_1 += '<li class="li_game_1" id="' + data[i].gid + '">' + '<span>' + data[i].game_name + '</span>' + '</li>';
+        $.get(api.getGameList,function (rcvData) {
+            if(rcvData.code == 0){
+                var gameList = rcvData.data;
+                var gameNode = '';
+                for(key in gameList){
+                    gameNode += '<li class="list_game_1" id="'+ key +'">' + '<span>' + gameList.key +'</span>' + '</li>';
                 }
-                $('.list_1').append(game_str_1);
+                $('.list_1').append(gameNode);
 
                 var _height1 = $('.list_1').height();
                 if (_height1 > 200) {
                     $('.list_1').addClass('overflow');
                 }
-            },
-
-        });
+            }
+        },'json');
 
         var _height = $('.yhk_list').height();
         if (_height > 200) {
