@@ -41,7 +41,7 @@
                 <div class="form _form">
                     <form class="signIn" autocomplete="off">
                         <div class="title">
-                            <em>欢迎登录</em><span>还没52buff账号？<a href="./register.html">快速注册</a> </span>
+                            <em>欢迎登录</em><span>还没52buff账号？<a href="#">快速注册</a> </span>
                         </div>
                         <span class="errMsg" style="color: red;"></span><!--服务器返回的错误信息-->
                         <div class="ipt username">
@@ -62,8 +62,10 @@
                         <div class="verify" style="margin-bottom: 30px;display: none">
                             <input type="text" name="code" placeholder="验证码" class="G_ipt code_bg" id="code"
                                    style="width:120px;">
+                            <span class="captcha_ok" style="display: none"></span>
+                            <span class="captcha_wrong" style="display: none"></span>
                             <span class="img_1"><img id="captcha" title="看不清楚点击刷新" src="http://login.52buff.com/captcha/build?type=default"
-                                                     style="height: 38px; width: 120px"></span>
+                                                     style="height: 38px; width: 120px; margin-left: 10px"></span>
                             <span class="tishi_codes"  style="display: none">请输入验证码</span>
                             <span class="error_code" style="display: none">验证码错误</span>
                             <span class="true_codes display" style="display: none;"><i></i>验证码不能为空</span>

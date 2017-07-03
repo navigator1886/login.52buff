@@ -27,9 +27,9 @@ a{
 #nav .logo2.fir {
 	display: block;
 	float: left;
-	height: 34px;
+	height: 64px;
 	width: 172px;
-	margin: 25px 0 0;
+	margin: 10px 0 0;
 	background: url("../../images/logo.png") 0 0 no-repeat;
 	color: #666;
 }

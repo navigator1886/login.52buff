@@ -1901,3 +1901,17 @@ b.customer{
 #captcha,#captcha1 {
 	cursor: pointer;
 }
+.captcha_ok{
+	background: url("../../images/icon/correct.png");
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	margin-left: -24px;
+}
+.captcha_wrong{
+	background: url("../../images/icon/wrong.png");
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	margin-left: -24px;
+}

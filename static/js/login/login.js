@@ -157,13 +157,16 @@ function checkcode() {
     if(code != ''){
         $.post(api.verifyCaptcha,{captcha: code},function (rcvData) {
             if(rcvData.code == 0){
-                console.log(rcvData.message);
+                $('.captcha_ok').show();
+                $('.captcha_wrong').hide();
             }
             else if(rcvData.code == 1){
-                console.log(rcvData.message);
+                $('.captcha_ok').hide();
+                $('.captcha_wrong').show();
             }
             else{
-                console.error(rcvData.message);
+                $('.captcha_ok').hide();
+                $('.captcha_wrong').hide();
             }
         },'json')
     }
